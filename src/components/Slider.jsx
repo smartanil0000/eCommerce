@@ -6,13 +6,14 @@ import { sliderItems } from "../data";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  margin-left: 10px;
   display: flex;
   position: relative;
   overflow: hidden;
 `;
 
 const Arrow = styled.div`
-  width: 50px;
+  width: 70px;
   height: 50px;
   background: white;
   border-radius: 50%;
@@ -32,7 +33,8 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  transform: translateX(0vw);
+  transition: all 1.5s ease;
+  transform: translateX(${(props)=>props.slideIndex * -100}vw);
 `;
 const Slide = styled.div`
   width: 100vw;
@@ -42,12 +44,13 @@ const Slide = styled.div`
   background-color: #${(props) => props.bg};
 `;
 const ImgContainer = styled.div`
-  height: 70%;
+  height: 80%;
   flex: 1;
 `;
 const Image = styled.img`
   height: 80%;
-`;
+ padding-left: 10px;
+  `;
 
 const InfoContainer = styled.div`
   flex: 1;
@@ -72,16 +75,22 @@ const Button = styled.button`
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
 
-  const handleClick = (direction) => {};
+  const handleClick = (direction) => {
+    if(direction === "left"){
+        setSlideIndex(slideIndex>0 ? slideIndex -1 : 4);
+    }else{
+        setSlideIndex(slideIndex<4 ? slideIndex + 1 : 0);
+    }
+  };
 
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined />
       </Arrow>
-      <Wrapper>
+      <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
-          <Slide bg={item.bg}>
+          <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
               <Image src={item.img}/>
             </ImgContainer>
