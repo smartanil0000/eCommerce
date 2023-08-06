@@ -3,9 +3,15 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import RoomIcon from '@material-ui/icons/Room';
+import PhoneIcon from '@material-ui/icons/Phone';
+import MailIcon from '@material-ui/icons/MailOutline';
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+${mobile({ flexDirection:"column"})}
+
 `;
 const Left = styled.div`
   flex: 1;
@@ -36,6 +42,8 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+${mobile({ display:"none"})}
+
 `;
 
 const Title = styled.h3`
@@ -60,7 +68,15 @@ const Right = styled.div`
   padding: 20px;
 `;
 
-const ContactItem = styled.div``
+const ContactItem = styled.div`
+margin-bottom:20px;
+display: flex;
+align-items: center;
+
+`
+
+const Payment = styled.div``
+
 
 const Footer = () => {
   return (
@@ -104,9 +120,10 @@ const Footer = () => {
       </Center>
       <Right>
         <Title>Contact</Title>
-        <ContactItem>9071 Sanjay Colony Faridabad 121005</ContactItem>
-        <ContactItem>+91 8285063757</ContactItem>
-        <ContactItem>smartanil0000@gmail.com</ContactItem>
+        <ContactItem> <RoomIcon style={{marginRight:"10px"}} />9071 Sanjay Colony Faridabad 121005</ContactItem>
+        <ContactItem><PhoneIcon style={{marginRight:"10px"}} />+91 8285063757</ContactItem>
+        <ContactItem><MailIcon style={{marginRight:"10px"}} />smartanil0000@gmail.com</ContactItem>
+        <Payment src="https://freepngimg.com/thumb/payment_method/2-2-payment-method-png-picture.png" />
       </Right>
     </Container>
   );
