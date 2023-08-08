@@ -4,6 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import  { Badge }  from "@material-ui/core";
 import Cart from '@material-ui/icons/ShoppingCartOutlined';
 import { mobile } from "../responsive"
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
 margin-top: -20px;
@@ -85,8 +86,12 @@ const Navbar = () => {
           <Logo>Anil</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
+          <Link to="/register">
+          <MenuItem >REGISTER</MenuItem>
+          </Link>
+          <Link to="/login">
           <MenuItem>SIGN IN</MenuItem>
+          </Link>
           <MenuItem>
           <Badge badgeContent={4} color="primary">
             <Cart />

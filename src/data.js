@@ -40,34 +40,28 @@ export const categories = [
     {
         id:1,
         img:"https://m.media-amazon.com/images/I/61XzMtVz3PL._AC._SR360,460.jpg",
-        title:"Dennis Lingo"
+        title:"Dennis Lingo",
+        cat:"men"
     },
     {
         id:2,
         img:"https://m.media-amazon.com/images/I/81JRISf4IUL._AC_UL400_.jpg",
-        title:"W for Woman"
+        title:"W for Woman",
+        cat:"woman"
     },
     {
         id:3,
         img:"https://m.media-amazon.com/images/I/71lFK2zWzwL._AC._SR360,460.jpg",
-        title:"Fashion Casual shirt"
+        title:"Fashion Casual shirt",
+        cat:"men"
     },
-    {
-        id:4,
-        img:"https://m.media-amazon.com/images/I/61P2lKCh7-L._AC._SR360,460.jpg",
-        title:"Track Jackets"
-    },
-    {
-        id:5,
-        img:"https://m.media-amazon.com/images/I/81zIZaLRjdL._AC._SR360,460.jpg",
-        title:"Adidas Men's Slim"
-    },
+    
 ]
 
 export const popularProducts = [
     {
         id:1,
-        img:"https://images-eu.ssl-images-amazon.com/images/I/41nzykE3sIL._AC_SX184_.jpg"
+        img:"https://images-eu.ssl-images-amazon.com/images/I/41nzykE3sIL._AC_SX184_.jpg",
     },
     {
         id:2,
